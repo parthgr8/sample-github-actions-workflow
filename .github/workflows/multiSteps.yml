@@ -21,4 +21,6 @@ jobs:
         steps:
             - name: "running pull request for master only"
               run : echo "running pull request on for master"
+            - name: "running 2nd step for pull request"
+              run: date
             
