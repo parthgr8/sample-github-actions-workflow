@@ -1,0 +1,22 @@
+name: "multiSteps and multiJobs"
+on: 
+    push:
+        branches:
+            - master
+            - test
+
+    pull_request:
+        branches:
+            - master
+jobs: 
+    on-push:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: "running on master/test"
+              run: echo "running on master/test"
+    on-pull-request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "running pull request for master only"
+              run : echo "running pull request on for master"
+            
