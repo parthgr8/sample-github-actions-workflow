@@ -8,6 +8,8 @@ on:
     pull_request:
         branches:
             - master
+        types:
+            - closed 
 
     workflow_dispatch:
     
@@ -26,4 +28,13 @@ jobs:
               run : echo "running pull request on for master"
             - name: "running 2nd step for pull request"
               run: date
+    on-pull-request-closed: 
+        if: github.event_name == 'pull_request' && github.event.action == 'closed'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "pull request closed"
+              run: echo "pull request closed"
+            - name: "time of closing"
+              run: date
+        
             
