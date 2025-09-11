@@ -36,5 +36,11 @@ jobs:
               run: echo "pull request closed"
             - name: "time of closing"
               run: date
+    on-workflow-dispatch: 
+        if: github.event_name == 'workflow_dispatch'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "workflow_Dipatch"
+              run: echo "workflow dispatch running"
         
             
